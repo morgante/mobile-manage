@@ -8,9 +8,17 @@ var {
 	TouchableHighlight
 } = React;
 
+var StoryPage = require("./StoryPage");
+
 var StoryCard = React.createClass({
 	onClick: function() {
-		console.log("clicked", this.props.story);
+		this.props.navigator.push({
+			title: this.props.story.headline,
+			component: StoryPage,
+			passProps: {
+				story: this.props.story
+			}
+        });
 	},
 	render: function() {
 		var story = this.props.story;

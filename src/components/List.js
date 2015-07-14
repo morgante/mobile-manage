@@ -16,7 +16,6 @@ var List = React.createClass({
 	},
 	render: function() {
 		var data = this.getData();
-		console.log("data", data);
 		return (
 			<View style={styles.container}>
 				<ListView
@@ -28,7 +27,7 @@ var List = React.createClass({
 	},
 	renderRow: function(data) {
 		return (
-			<StoryCard story={data} />
+			<StoryCard story={data} navigator={this.props.navigator} />
 		);
 	}
 });
